@@ -1,4 +1,3 @@
-import sys
 import keyboard
 import asyncio
 import time
